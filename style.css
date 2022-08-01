@@ -1,0 +1,194 @@
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background-color: #282a35 ;
+    color: azure ;
+}
+
+:root{
+    --borderColor1: #03A9F3;
+}
+
+
+
+.border1{
+    position: relative;
+    border: 1px solid #03A9F3;
+    cursor: pointer;
+}
+.border1::before,.border1::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transition: .3s ease-in-out;
+}
+.border1::before{
+    top: -5px;
+    left: -5px;
+    border-top: 1px solid var(--borderColor1);
+    border-left: 1px solid var(--borderColor1);
+}
+.border1::after{
+    right: -5px;
+    bottom: -5px;
+    border-bottom: 1px solid var(--borderColor1);
+    border-right: 1px solid var(--borderColor1);
+}
+.border1:hover::before,.border1:hover::after{
+    width: calc(100% + 9px);
+    height: calc(100% + 9px);
+}
+
+
+
+
+.border2A{
+    position: relative;
+    cursor: pointer;
+    background:
+        linear-gradient(90deg, #ab13ff 50%, transparent 0) repeat-x,
+        linear-gradient(90deg, #ab13ff 50%, transparent 0) repeat-x,
+        linear-gradient(0deg, #ab13ff 50%, transparent 0) repeat-y,
+        linear-gradient(0deg, #ab13ff 50%, transparent 0) repeat-y;
+    background-size: 8px 2px, 8px 2px, 2px 8px, 2px 8px;
+    background-position: 0 0, 0 100%, 0 0, 100% 0;
+
+}
+.border2A:hover{
+    animation: linearGradientMove .1s infinite linear;
+}
+
+.border2B{
+    outline: 1px solid #ab13ff;
+    position: relative;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+.border2B:hover{
+    outline: 1px solid transparent;
+    background:
+        linear-gradient(90deg, #ab13ff 50%, transparent 0) repeat-x,
+        linear-gradient(90deg, #ab13ff 50%, transparent 0) repeat-x,
+        linear-gradient(0deg, #ab13ff 50%, transparent 0) repeat-y,
+        linear-gradient(0deg, #ab13ff 50%, transparent 0) repeat-y;
+    background-size: 8px 2px, 8px 2px, 2px 8px, 2px 8px;
+
+    background-position: 0 0, 0 100%, 0 0, 100% 0;
+    animation: linearGradientMove .3s infinite linear;
+}
+
+
+
+.border3{
+    position: relative;
+    cursor: pointer;
+    z-index: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 400px;
+    height: 200px;
+}
+.border3::before{
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    z-index: -2;
+    left: -75%;
+    top: -75%;
+    width: 250%;
+    height: 250%;
+    background-color: #399953;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    
+    background-image: 
+        linear-gradient(#399953, #399953), 
+        linear-gradient(#fbb300, #fbb300), 
+        linear-gradient(#d53e33, #d53e33), 
+        linear-gradient(#377af5, #377af5);
+	animation: rotate 4s linear infinite;
+}
+.border3::after{
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background: #333;
+    animation: opacityChange 3s infinite alternate;
+}
+
+
+.border4{
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    width: 400px;
+	height: 200px;
+	margin: 20px;
+    border-radius: 10px;
+    padding: 2rem;
+}
+.border4::before{
+    box-sizing: border-box;
+    content: '';
+    position: absolute;
+    z-index: -2;
+    top: -100%;
+    width: 200%;
+    height: 300%;
+    background-color: #1a232a;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-image: conic-gradient(transparent, #0ae7e7, transparent 20%);
+    animation: rotate 4s linear infinite;
+}
+.border4::after{
+    box-sizing: border-box;
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background: #333;
+    border-radius: 5px;
+    animation: opacityChange 3s infinite alternate;
+}
+
+
+
+
+
+
+@keyframes linearGradientMove{
+    100%{
+        background-position: 8px 0, -8px 100%, 0 -8px, 100% 8px;
+    }
+}
+
+@keyframes rotate {
+    100%{
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes opacityChange{
+    50%{
+        opacity: 1;
+    }
+    75%{
+        opacity: .3;
+    }
+    100%{
+        opacity: .5;
+    }
+}
