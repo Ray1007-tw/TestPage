@@ -248,7 +248,7 @@ body{
     z-index: -10;
 }
 .border7:hover::before{
-    transform: rotateZ(0deg) translate(0, 0);
+    transform: rotateZ(0deg) translate(0%, -0%);
 }
 .border7::after{
     content: '';
@@ -265,13 +265,30 @@ body{
 .border7B{
     overflow: hidden;
 }
-.border7B:after{
+.border7B::before{
+    background-color: #4e89f3;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    position: absolute;
+    transform: rotateZ(-90deg) translate(-100% ,-100%);
+    transform-origin: top left;
+    transition:  transform .3s;
+    transition-timing-function: linear;
+    content:"";
+    z-index: -10;
+}
+.border7B:hover:before{
+    transform: rotateZ(0deg) translate(0%, -0%);
+}
+.border7B::after{
     content: '';
     position: absolute;
-    top: 4px;
-    bottom: 4px;
-    left: 4px;
-    right: 4px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
     cursor: pointer;
     z-index: -1;
     background-color: #333;
@@ -296,7 +313,27 @@ body{
     cursor: pointer;
 }
 
-
+.border9{
+    width: 200px;
+    height: 200px;
+    background-color: #333;
+    transform: rotate(45deg);
+    position: relative;
+    margin-bottom: 5rem;
+    border: 10px solid;
+    border-radius: 10px;
+    border-image: linear-gradient(30deg, #00ffff, #ff0000) 1;
+    clip-path: inset(0px round 10px);
+    animation: huerotate 6s infinite linear;
+    filter: hue-rotate(360deg);
+}
+.border9:hover{
+    cursor: pointer;
+}
+#border9_text{
+    transform: rotate(-45deg);
+    padding-top: 70%;
+}
 
 
 @keyframes linearGradientMove{
