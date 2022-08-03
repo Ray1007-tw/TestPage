@@ -8,12 +8,13 @@
       integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="border.css" />
+    <link rel="stylesheet" href="text.css"/>
   </head>
 
   <body>
     <!-- <img src="./animal_shirohera_koumori_set.png" /> -->
-    <div style="padding: 1rem">
+    <div style="padding: 1rem; padding-bottom: 5rem">
       <div
         class="border1 d-flex justify-content-center mx-auto mt-5 text-xl-center py-3 px-5"
         style="width: fit-content; height: fit-content"
@@ -91,6 +92,19 @@
         class="border10 d-flex justify-content-center mx-auto mt-5 text-xl-center py-3 px-5"
       >
         <span id="border10_text">Border 10</span>
+      </div>
+
+      <hr id="horizonLine" style="margin-top: 5rem; margin-bottom: 5rem;">
+      <div id="verticalListContainer">
+        <ul id="verticalList">
+          <li class="verticalListItem">Item A</li>
+          <li class="verticalListItem">Item B</li>
+          <li class="verticalListItem">Item C</li>
+          <li class="verticalListItem">Item D</li>
+          <li class="verticalListItem">Item E</li>
+          <!-- For animation looping smoother -->
+          <li class="verticalListItem">Item A</li>
+        </ul>
       </div>
     </div>
   </body>
