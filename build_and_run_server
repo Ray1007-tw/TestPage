@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# variables
-$building=$JENKINS_HOME/workspace/forTest/server/demo
-$libs=$JENKINS_HOME/workspace/forTest/server/demo/build/libs
-$dockerfile=$JENKINS_HOME/workspace/forTest/server/Dockerfile
-$app_props=$JENKINS_HOME/workspace/forTest/server/application.yml
+# path
+# building=$JENKINS_HOME/workspace/forTest/server/demo
+# libs=$JENKINS_HOME/workspace/forTest/server/demo/build/libs
+# dockerfile=$JENKINS_HOME/workspace/forTest/server/Dockerfile
+# app_props=$JENKINS_HOME/workspace/forTest/server/application.yml
 
 # # remove server container and image
 # sudo docker stop test-page-server
@@ -12,7 +12,7 @@ $app_props=$JENKINS_HOME/workspace/forTest/server/application.yml
 # sudo docker rmi test-page-server:latest
 
 # gradle build
-cd $building
+cd $JENKINS_HOME/workspace/forTest/server/demo
 pwd
 # chmod +x ./gradlew
 # ./gradlew build
