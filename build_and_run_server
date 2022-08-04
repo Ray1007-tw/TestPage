@@ -1,17 +1,24 @@
 #!/bin/bash
 
-# # remove server container and image
-# sudo docker stop test-page-server
-# sudo docker rm test-page-server
-# sudo docker rmi test-page-server:latest
+# variables
+$building=$JENKINS_HOME/workspace/forTest/server/demo
+$libs=$JENKINS_HOME/workspace/forTest/server/demo/build/libs
+$dockerfile=$JENKINS_HOME/workspace/forTest/server/Dockerfile
+$app_props=$JENKINS_HOME/workspace/forTest/server/application.yml
 
-# # gradle build
-# cd ./server/demo
-# chmod +x ./gradlew
-# ./gradlew build
+# remove server container and image
+sudo docker stop test-page-server
+sudo docker rm test-page-server
+sudo docker rmi test-page-server:latest
 
+# gradle build
+cd $building
+chmod +x ./gradlew
+./gradlew build
 
+cp $dockerfile $libs
+cp $app_props $libs
 
-cd $JENKINS_HOME/workspace/forTest/server/demo/build/libs
 ls
+
 echo "where is it"
