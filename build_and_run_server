@@ -13,12 +13,11 @@
 
 # gradle build
 cd $JENKINS_HOME/workspace/forTest/server/demo
-pwd
-# chmod +x ./gradlew
-# ./gradlew build
-# 
-# cp $dockerfile $libs
-# cp $app_props $libs
+chmod +x ./gradlew
+./gradlew build
+
+cp $JENKINS_HOME/workspace/forTest/server/Dockerfile $JENKINS_HOME/workspace/forTest/server/demo/build/libs
+cp $JENKINS_HOME/workspace/forTest/server/application.yml $JENKINS_HOME/workspace/forTest/server/demo/build/libs
 
 ls
 
