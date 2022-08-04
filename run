@@ -1,4 +1,5 @@
 #!/bin/bash
+apt-get update && apt-get -y install sudo
 sudo docker stop test-page
 sudo docker rm test-page
 sudo docker rmi test-page:latest
