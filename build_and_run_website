@@ -1,7 +1,13 @@
 #!/bin/bash
+
+# install sudo
 apt-get update && apt-get -y install sudo
+
+# remove container and image
 sudo docker stop test-page
 sudo docker rm test-page
 sudo docker rmi test-page:latest
+
+# build image and run container
 sudo docker build -t test-page:latest .
 sudo docker run -d --network="host" --name test-page test-page:latest 
