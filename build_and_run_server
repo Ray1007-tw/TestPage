@@ -6,18 +6,19 @@ $libs=$JENKINS_HOME/workspace/forTest/server/demo/build/libs
 $dockerfile=$JENKINS_HOME/workspace/forTest/server/Dockerfile
 $app_props=$JENKINS_HOME/workspace/forTest/server/application.yml
 
-# remove server container and image
-sudo docker stop test-page-server
-sudo docker rm test-page-server
-sudo docker rmi test-page-server:latest
+# # remove server container and image
+# sudo docker stop test-page-server
+# sudo docker rm test-page-server
+# sudo docker rmi test-page-server:latest
 
 # gradle build
 cd $building
-chmod +x ./gradlew
-./gradlew build
-
-cp $dockerfile $libs
-cp $app_props $libs
+pwd
+# chmod +x ./gradlew
+# ./gradlew build
+# 
+# cp $dockerfile $libs
+# cp $app_props $libs
 
 ls
 
