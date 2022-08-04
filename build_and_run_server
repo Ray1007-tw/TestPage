@@ -12,6 +12,6 @@
 
 
 
-echo {$JENKINS_HOME}/workspace/forTest/server/demo
-
+cd $JENKINS_HOME/workspace/forTest/server/demo/build/libs
+ls
 echo "where is it"
