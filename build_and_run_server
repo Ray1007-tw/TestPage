@@ -10,6 +10,8 @@
 # chmod +x ./gradlew
 # ./gradlew build
 
-echo $JENKINS_HOME
+
+
+echo {$JENKINS_HOME}/workspace/forTest/server/demo
 
 echo "where is it"
