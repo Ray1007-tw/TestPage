@@ -1,14 +1,15 @@
 #!/bin/bash
 
-# remove server container and image
-sudo docker stop test-page-server
-sudo docker rm test-page-server
-sudo docker rmi test-page-server:latest
+# # remove server container and image
+# sudo docker stop test-page-server
+# sudo docker rm test-page-server
+# sudo docker rmi test-page-server:latest
 
-# gradle build
-cd ./server/demo
-chmod +x ./gradlew
-./gradlew build
+# # gradle build
+# cd ./server/demo
+# chmod +x ./gradlew
+# ./gradlew build
+
+echo $JENKINS_HOME
 
 echo "where is it"
-pwd
