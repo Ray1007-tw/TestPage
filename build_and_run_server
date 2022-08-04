@@ -5,8 +5,10 @@ sudo docker stop test-page-server
 sudo docker rm test-page-server
 sudo docker rmi test-page-server:latest
 
-# build image and run container
+# gradle build
+cd ./server/demo
+chmod +x ./gradlew
+./gradlew build
+
+echo "where is it"
 pwd
-ls
-cd
-ls
