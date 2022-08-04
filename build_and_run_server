@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# remove server container and image
+sudo docker stop test-page-server
+sudo docker rm test-page-server
+sudo docker rmi test-page-server:latest
+
+# build image and run container
+pwd
+ls
+cd
+ls

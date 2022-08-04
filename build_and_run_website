@@ -9,5 +9,6 @@ sudo docker rm test-page
 sudo docker rmi test-page:latest
 
 # build image and run container
+cd nginx
 sudo docker build -t test-page:latest .
 sudo docker run -d --network="host" --name test-page test-page:latest 
