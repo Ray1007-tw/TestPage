@@ -12,7 +12,7 @@ sudo npm install
 sudo npm run build
 
 mkdir $JENKINS_HOME/workspace/forTest/nginx/temp
-cp -a $JENKINS_HOME/workspace/forTest/nginx/react_web/build $JENKINS_HOME/workspace/forTest/nginx/temp
+cp -a $JENKINS_HOME/workspace/forTest/nginx/react_web/build/ $JENKINS_HOME/workspace/forTest/nginx/temp
 
 # # remove container and image
 # sudo docker stop test-page
