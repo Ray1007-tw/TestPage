@@ -3,11 +3,16 @@
 # install sudo
 apt-get update && apt-get -y install sudo
 apt-get -y install npm
+npm install -g npm@8.16.0
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt-get -y install nodejs
 
-cd $JENKINS_HOME/nginx/react_web
+cd $JENKINS_HOME/workspace/forTest/nginx/react_web
 sudo npm install
 sudo npm build
 
+mkdir $JENKINS_HOME/workspace/forTest/nginx/temp
+cp -a $JENKINS_HOME/workspace/forTest/nginx/react_web/build $JENKINS_HOME/workspace/forTest/nginx/temp
 
 # # remove container and image
 # sudo docker stop test-page
