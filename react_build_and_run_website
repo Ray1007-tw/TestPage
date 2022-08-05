@@ -1,25 +1,27 @@
 #!/bin/bash
 
-# install sudo
+# install tools
 apt-get update && apt-get -y install sudo
 apt-get -y install npm
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get -y install nodejs
 npm install -g npm@8.16.0
 
+# install node_modules and build
 cd $JENKINS_HOME/workspace/forTest/nginx/react_web
 sudo npm install
 sudo npm run build
 
+# clear webiste dir and copy files that just built to webiste dir
 rm -r $JENKINS_HOME/workspace/forTest/nginx/website/*
 cp -a $JENKINS_HOME/workspace/forTest/nginx/react_web/build/* $JENKINS_HOME/workspace/forTest/nginx/website/
 
-# # remove container and image
-# sudo docker stop test-page
-# sudo docker rm test-page
-# sudo docker rmi test-page:latest
+# remove container and image
+sudo docker stop test-page
+sudo docker rm test-page
+sudo docker rmi test-page:latest
 
-# # build image and run container
-# cd nginx
-# sudo docker build -t test-page:latest .
-# sudo docker run -d --network="host" --name test-page test-page:latest 
+# build image and run container
+cd $JENKINS_HOME/workspace/forTest/nginx
+sudo docker build -t test-page:latest .
+sudo docker run -d --network="host" --name test-page test-page:latest 
