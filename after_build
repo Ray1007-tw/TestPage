@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# remove files
+rm $JENKINS_HOME/workspace/forTest/server/demo/build/libs/Dockerfile
+rm $JENKINS_HOME/workspace/forTest/server/application.yml $JENKINS_HOME/workspace/forTest/server/demo/build/libs/application.yml
