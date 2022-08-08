@@ -7,8 +7,7 @@ chmod +x ./gradlew
 
 cd $JENKINS_HOME/workspace/forTest/server/demo/build/libs
 
-cp $JENKINS_HOME/workspace/forTest/server/Dockerfile $JENKINS_HOME/workspace/forTest/server/demo/build/libs
-cp $JENKINS_HOME/workspace/forTest/server/application.yml $JENKINS_HOME/workspace/forTest/server/demo/build/libs
+cp $JENKINS_HOME/workspace/forTest/server/demo/build/libs/demo.jar $JENKINS_HOME/workspace/forTest/server/
 
 #TODO: build server image, container
 sudo docker-compose down
