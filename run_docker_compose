@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# gradle build
+cd $JENKINS_HOME/workspace/forTest/server/demo
+chmod +x ./gradlew
+./gradlew build
+
+cd $JENKINS_HOME/workspace/forTest/server/demo/build/libs
+
+cp $JENKINS_HOME/workspace/forTest/server/Dockerfile $JENKINS_HOME/workspace/forTest/server/demo/build/libs
+cp $JENKINS_HOME/workspace/forTest/server/application.yml $JENKINS_HOME/workspace/forTest/server/demo/build/libs
+
+#TODO: build server image, container
+sudo docker-compose down
+sudo docker-compose up --build -d
