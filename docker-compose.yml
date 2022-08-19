@@ -8,9 +8,10 @@ services:
     ports:
       - 8087:8087
       - 8081:8081
+    volumes:
+      - /tmp:/tmp
+
   nginx:
     build: nginx
     network_mode: "host"
-
-
 
