@@ -7,6 +7,7 @@ services:
     network_mode: "host"
     ports:
       - 8087:8087
+      - 8081:8081
   nginx:
     build: nginx
     network_mode: "host"
